@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  get 'restaurants_controller/name:text'
-  get 'restaurants_controller/address:text'
-  get 'restaurants_controller/phone'
-  get 'restaurants_controller/number:integer'
-  get 'restaurants_controller/category:text'
+get 'restaurants', to: 'restaurants#index'
+get 'restaurants/new', to: 'restaurants#new'
+get 'restaurants/:id', to: 'restaurants#show', as: "restaurant"
+post 'restaurants', to: 'restaurants#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
